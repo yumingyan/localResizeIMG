@@ -7,6 +7,8 @@ var paths = {
 };
 
 module.exports = {
+    mode: "production", //打包为开发模式
+
     entry: {
         lrz      : paths.src + '/lrz',
         'lrz.all': paths.src + '/lrz.all'
@@ -15,7 +17,8 @@ module.exports = {
     output: {
         filename     : "[name].bundle.js",
         chunkFilename: "[name].chunk.js",
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
+        path: path.resolve(__dirname, "./dist"), //将js文件打包到dist/js的目录
     },
 
     resolve: {
